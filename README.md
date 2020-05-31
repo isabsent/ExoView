@@ -1,6 +1,5 @@
 # ExoView
-ExoVideoView adoption
-![ExoVideoView](https://github.com/JarvanMo/ExoVideoView)
+[ExoVideoView](https://github.com/JarvanMo/ExoVideoView) adoption
 
 ## Gradle:
 
