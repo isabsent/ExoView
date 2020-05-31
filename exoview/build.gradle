@@ -8,7 +8,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "0.0.2"
+        versionName "0.0.3"
     }
 
     buildTypes {
@@ -33,7 +33,7 @@ publish {
     groupId = 'com.isabsent.exoview'
     artifactId = 'exoview'
     publishVersion = android.defaultConfig.versionName
-    desc = 'exoplayer adoptation'
+    desc = 'exoplayer adaptation'
     website = 'https://github.com/isabsent/ExoView'
 }
 
