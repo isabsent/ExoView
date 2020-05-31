@@ -34,30 +34,32 @@ public class ExoViewActivity extends Activity {
     private void initVideoView() {
         SimpleMediaSource mediaSource;
         Uri uri = getIntent().getData();
-        if (uri != null) {
-            videoView = findViewById(R.id.videoView);
-            videoView.setPortrait(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
-            videoView.setBackListener((view, isPortrait) -> {
-                if (isPortrait)
-                    ExoViewActivity.this.finish();
-                return false;
-            });
 
-            videoView.setOrientationListener(orientation -> {
-                if (orientation == SENSOR_PORTRAIT || orientation == SENSOR_LANDSCAPE) {
-                    WindowManager.LayoutParams attr = getWindow().getAttributes();
-                    Window window = getWindow();
-                    window.setAttributes(attr);
-                    window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-                }
-            });
+        videoView = findViewById(R.id.videoView);
+        videoView.setPortrait(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
+        videoView.setBackListener((view, isPortrait) -> {
+            if (isPortrait)
+                ExoViewActivity.this.finish();
+            return false;
+        });
 
-            String fileName = getFileName(uri);
-            mediaSource = new SimpleMediaSource(uri);
-            mediaSource.setDisplayName(fileName);
+        videoView.setOrientationListener(orientation -> {
+            if (orientation == SENSOR_PORTRAIT || orientation == SENSOR_LANDSCAPE) {
+                WindowManager.LayoutParams attr = getWindow().getAttributes();
+                Window window = getWindow();
+                window.setAttributes(attr);
+                window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            }
+        });
 
-            videoView.play(mediaSource, false);
-        }
+        if (uri == null)
+            uri = Uri.parse("https://filesamples.com/samples/video/3gp/sample_1280x720.3gp");
+        String fileName = getFileName(uri);
+        mediaSource = new SimpleMediaSource(uri);
+        mediaSource.setDisplayName(fileName);
+
+        videoView.play(mediaSource, false);
+
     }
 
 //    private void initCustomViews() {

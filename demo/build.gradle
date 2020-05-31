@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.jarvanmo.demo"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -21,17 +20,14 @@ android {
         abortOnError false
     }
 
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-
 }
 
 dependencies {
-//    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api 'commons-io:commons-io:2.6'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'commons-io:commons-io:2.6'
     implementation project(':exoview')
 }
