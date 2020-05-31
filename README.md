@@ -4,7 +4,13 @@
 ## Gradle:
 
     dependencies {
-      compile 'com.github.isabsent:exoview:0.0.2'
+      implementation 'com.isabsent.exoview:exoview:0.0.2'
+    }
+    
+or in the case of some conflicts between androidx- and support- libraries:
+    
+    implementation ('com.isabsent.exoview:exoview:0.0.2'){
+        exclude group: 'androidx.media'
     }
 
 ## Maven:
