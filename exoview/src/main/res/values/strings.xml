@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ExoView</string>
+    <string name="default_video_time" translatable="false">00:00</string>
+    <string name="default_video_combined_time" translatable="false">00:00/00:00</string>
+    <string name="player_error">player error:%1$d</string>
+</resources>
