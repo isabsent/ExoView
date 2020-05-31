@@ -1,2 +1,2 @@
 # ExoView
-ExoVideoView adoptation
+ExoVideoView adoption
