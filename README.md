@@ -1,2 +1,2 @@
 # ExoView
-Google ExoPlayer adoptation
+ExoVideoView adoptation
