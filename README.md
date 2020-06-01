@@ -4,7 +4,7 @@
 ## Gradle:
 
     dependencies {
-      implementation 'com.isabsent.exoview:exoview:0.0.4'
+      implementation 'com.isabsent.exoview:exoview:0.0.5'
     }
     
 or in the case of some conflicts in compiling time between androidx- and support- libraries like a
@@ -12,7 +12,7 @@ or in the case of some conflicts in compiling time between androidx- and support
     "Program type already present: android.support.v4.xxx"
 exclude androidx.media group
 
-    implementation ('com.isabsent.exoview:exoview:0.0.4'){
+    implementation ('com.isabsent.exoview:exoview:0.0.5'){
         exclude group: 'androidx.media'
     }
 
@@ -21,6 +21,6 @@ exclude androidx.media group
     <dependency>
       <groupId>com.github.isabsent</groupId>
       <artifactId>exoview</artifactId>
-      <version>0.0.4</version>
+      <version>0.0.5</version>
       <type>pom</type>
     </dependency>
