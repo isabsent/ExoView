@@ -31,6 +31,7 @@
 
     <FrameLayout
         android:id="@id/exo_player_center_info_wrapper"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true">
@@ -38,14 +39,12 @@
         <TextView
             android:id="@id/exo_player_center_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@id/exo_player_center_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:drawableTop="@drawable/ic_error_outline_white_48dp"
             android:textColor="@android:color/white"
             android:visibility="gone" />

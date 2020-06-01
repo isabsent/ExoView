@@ -137,6 +137,6 @@ public class ExoViewActivity extends Activity {
             if (cursor != null)
                 IOUtils.closeQuietly(cursor);
         }
-        return "Not available";
+        return uri.getLastPathSegment();
     }
 }

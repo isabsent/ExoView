@@ -34,7 +34,7 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
-import com.google.android.exoplayer2.ui.PlaybackControlView;
+import com.google.android.exoplayer2.ui.PlayerControlView;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.RepeatModeUtil;
@@ -129,7 +129,7 @@ public class ExoVideoView extends FrameLayout implements ExoVideoPlaybackControl
         boolean useController = true;
         int surfaceType = SURFACE_TYPE_SURFACE_VIEW;
         int resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT;
-        int controllerShowTimeoutMs = PlaybackControlView.DEFAULT_SHOW_TIMEOUT_MS;
+        int controllerShowTimeoutMs = PlayerControlView.DEFAULT_SHOW_TIMEOUT_MS;
         boolean controllerHideOnTouch = true;
         boolean controllerAutoShow = true;
 

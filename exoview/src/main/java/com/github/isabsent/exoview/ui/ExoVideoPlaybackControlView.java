@@ -1358,7 +1358,7 @@ public class ExoVideoPlaybackControlView extends FrameLayout {
         return true;
     }
 
-    private final class ComponentListener  implements TimeBar.OnScrubListener, OnClickListener,Player.EventListener {
+    private final class ComponentListener implements TimeBar.OnScrubListener, OnClickListener,Player.EventListener {
 
         @Override
         public void onScrubStart(TimeBar timeBar, long position) {
@@ -1392,7 +1392,7 @@ public class ExoVideoPlaybackControlView extends FrameLayout {
             if (playbackState == Player.STATE_IDLE || playbackState == Player.STATE_BUFFERING) {
                 removeCallbacks(hideAction);
                 showUtilHideCalled();
-                showLoading(true);
+                showLoading(/*true*/hasNoErrors());
             } else if (playbackState == Player.STATE_READY && player.getPlayWhenReady() || playbackState == Player.STATE_ENDED) {
                 showLoading(false);
                 hide();
@@ -1400,6 +1400,10 @@ public class ExoVideoPlaybackControlView extends FrameLayout {
 
             updatePlayPauseButton();
             updateProgress();
+        }
+
+        private boolean hasNoErrors() {
+            return centerError == null || centerError.getVisibility() == View.INVISIBLE || centerError.getVisibility() == View.GONE;
         }
 
         @Override
@@ -1429,7 +1433,6 @@ public class ExoVideoPlaybackControlView extends FrameLayout {
                 isHls = false;
             }
 
-
             updateNavigation();
             updateTimeBarMode();
             updateProgress();
@@ -1438,9 +1441,9 @@ public class ExoVideoPlaybackControlView extends FrameLayout {
 
         @Override
         public void onPlayerError(ExoPlaybackException error) {
-            if(loadingBar  != null){
+            if(loadingBar  != null)
                 loadingBar.setVisibility(GONE);
-            }
+
             if (centerError != null) {
                 String errorText = getResources().getString(R.string.player_error, error.type);
                 centerError.setText(errorText);
@@ -1486,8 +1489,8 @@ public class ExoVideoPlaybackControlView extends FrameLayout {
                     }
                 } else if (centerInfoWrapper == view) {
                     playOrPause();
-//                } else if (exoPlayerCurrentQualityLandscape == view && qualityVisibilityCallback != null) {
-//                    hide();
+                } else /*if (exoPlayerCurrentQualityLandscape == view && qualityVisibilityCallback != null)*/ {
+                    hide();
 //                    qualityVisibilityCallback.shouldChangeVisibility(View.VISIBLE);
                 }
             }
