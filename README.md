@@ -7,7 +7,7 @@
       implementation 'com.isabsent.exoview:exoview:0.0.4'
     }
     
-or in the case of some conflicts in compileng time between androidx- and support- libraries like a
+or in the case of some conflicts in compiling time between androidx- and support- libraries like a
 
     "Program type already present: android.support.v4.xxx"
 exclude androidx.media group
